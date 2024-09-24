@@ -1,0 +1,11 @@
+{
+	"watch": ["src", ".env"],
+	"ignore": ["node_modules", ".vscode", "build", "cache"],
+	"ext": ".ts, .env",
+	"exec": "node -r @swc-node/register ./src/main.ts",
+
+	"delay": 1,
+
+	"verbose": false,
+	"quiet": true
+}

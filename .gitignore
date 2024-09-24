@@ -1,0 +1,7 @@
+# Folder
+node_modules/
+cache/
+build/
+
+#File
+.env

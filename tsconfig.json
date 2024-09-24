@@ -1,0 +1,47 @@
+{
+	"include": ["src/**/*.ts", "src"],
+	"compilerOptions": {
+		"module": "CommonJS",
+		"outDir": "build",
+		"target": "es2022",
+
+		//for stable using
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+
+		"strict": true,
+		"declaration": false, //remove type ts when build
+
+		"useUnknownInCatchVariables": false, // make args catch is any, not use unknown
+
+		//for fast compile // turn it off will not affect the project
+		"skipLibCheck": true,
+		"noEmit": true,
+		// "incremental": true,
+		"isolatedModules": true,
+
+		// alias
+		"baseUrl": "src",
+		"paths": {
+			"~args/*": ["./args/*"],
+			"~resolvers/*": ["./resolvers/*"],
+			"~configs/*": ["./configs/*"],
+			"~constants/*": ["./constants/*"],
+			"~controllers/*": ["./controllers/*"],
+			"~exceptions/*": ["./exceptions/*"],
+			"~middlewares/*": ["./middlewares/*"],
+			"~entities/*": ["./models/entities/*"],
+			"~repositories/*": ["./repositories/*"],
+			"~routes/*": ["./routes/*"],
+			"~services/*": ["./services/*"],
+			"~types/*": ["./types/*"],
+			"~utils/*": ["./utils/*"],
+			"~workers/*": ["./workers/*"]
+		}
+	},
+	"tsc-alias": {
+		"verbose": false,
+		"resolveFullPaths": true
+	}
+}
