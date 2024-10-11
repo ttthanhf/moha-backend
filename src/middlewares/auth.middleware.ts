@@ -25,4 +25,16 @@ export class AuthMiddleware {
 
 		return await next();
 	};
+
+	static test: MiddlewareFn<Context> = async (data, next) => {
+		const userId = data.context.request.headers.get('userId');
+
+		data.context.res.model.data = {
+			user: {
+				id: userId
+			}
+		};
+
+		return await next();
+	};
 }

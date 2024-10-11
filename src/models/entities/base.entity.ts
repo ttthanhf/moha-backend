@@ -11,11 +11,11 @@ export abstract class BaseEntity {
 	})
 	readonly id!: number;
 
-	@Property({ type: 'datetime' })
+	@Property({ type: 'datetime', nullable: true })
 	readonly createdAt: Date = new Date();
 
-	@Property({ onUpdate: () => new Date(), type: 'datetime' })
-	readonly updatedAt: Date = new Date();
+	@Property({ onUpdate: () => new Date(), type: 'datetime', nullable: true })
+	readonly updatedAt!: Date;
 
 	@Property({ type: 'datetime', nullable: true })
 	readonly deletedAt!: Date;

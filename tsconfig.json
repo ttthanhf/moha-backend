@@ -21,6 +21,10 @@
 		// "incremental": true,
 		"isolatedModules": true,
 
+		//debug
+		// "sourceMap": true,
+		"inlineSourceMap": true,
+
 		// alias
 		"baseUrl": "src",
 		"paths": {

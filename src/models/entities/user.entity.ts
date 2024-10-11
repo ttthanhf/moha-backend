@@ -31,7 +31,7 @@ export class User extends BaseEntity {
 	@Property()
 	email!: string;
 
-	@Property()
+	@Property({ nullable: true })
 	password!: string;
 
 	@Field(() => Role)
@@ -41,6 +41,10 @@ export class User extends BaseEntity {
 	@Field(() => UserStatus)
 	@Enum(() => UserStatus)
 	status: UserStatus = UserStatus.ACTIVE;
+
+	@Field()
+	@Property()
+	isVerified: boolean = false;
 
 	@BeforeCreate()
 	async encryptPassword() {

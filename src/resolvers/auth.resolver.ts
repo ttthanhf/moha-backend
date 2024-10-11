@@ -40,6 +40,9 @@ export class AuthResolver {
 			logger.debug(`User not exist`);
 			throw new GraphQLError('Email or Password not correct !');
 		}
+		if (!user.isVerified) {
+			throw new GraphQLError('This account not verify yet');
+		}
 
 		const isCorrect = await CryptoUtil.comparePassword(password, user.password);
 
@@ -142,11 +145,63 @@ export class AuthResolver {
 		}
 
 		user.password = password;
+		user.isVerified = true;
 
 		await UserService.updateUser(user);
 
 		await RedisService.removeTokenResetPassword(token);
 
 		return 'Success';
+	}
+
+	@Mutation(() => String)
+	async sendVerifyUserOTP(@Arg('email') email: string) {
+		const user = await UserService.getUserByEmail(email);
+		if (!user) {
+			throw new GraphQLError('User not found');
+		}
+		if (user.isVerified) {
+			throw new GraphQLError('This account already verified');
+		}
+
+		await RedisService.removeOTPCodeResetPassword(email);
+
+		const OTPCode = NumberUtil.getRandomNumberByLength(4);
+
+		mailUtil.sendMailVerifyUser(email, OTPCode);
+
+		await RedisService.setOTPCodeResetPassword(email, OTPCode);
+
+		return 'Success';
+	}
+
+	@Mutation(() => String)
+	async verifyUser(
+		@Arg('OTPCode') OTPCode: string,
+		@Arg('email') email: string
+	) {
+		const storedOTPCode = await RedisService.getOTPCodeResetPassword(email);
+		if (!storedOTPCode) {
+			throw new GraphQLError('Verify fail 1');
+		}
+
+		if (OTPCode != storedOTPCode) {
+			throw new GraphQLError('Verify fail 2');
+		}
+
+		const user = await UserService.getUserByEmail(email);
+		if (!user) {
+			throw new GraphQLError('Reset password fail 4');
+		}
+
+		user.isVerified = true;
+
+		await UserService.updateUser(user);
+
+		await RedisService.removeOTPCodeResetPassword(OTPCode);
+
+		const access_token = UserService.generateUserAccessToken(user);
+
+		return access_token;
 	}
 }

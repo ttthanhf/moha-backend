@@ -26,20 +26,18 @@ export class Oauth2Service {
 			grant_type: 'authorization_code'
 		});
 
-		const fetchData = await fetch(
-			'https://oauth2.googleapis.com/token?' + querystring,
-			{
-				method: 'POST'
-			}
-		);
-
-		const response: OAUTH2_GOOGLE_TOKEN = await fetchData.json();
-		if (response.error) {
-			throw new GraphQLError(
-				response.error_description + ': ' + response.error
-			);
-		}
-		return fetchData.json();
+		return fetch('https://oauth2.googleapis.com/token?' + querystring, {
+			method: 'POST'
+		})
+			.then((response) => response.json())
+			.then((result) => {
+				if (result.error) {
+					throw new GraphQLError(
+						result.error_description + ': ' + result.error
+					);
+				}
+				return result as OAUTH2_GOOGLE_TOKEN;
+			});
 	}
 	private static async getGoogleUserInfo(
 		access_token: string,

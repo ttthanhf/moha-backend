@@ -3,9 +3,10 @@ import { defineConfig, MariaDbDriver } from '@mikro-orm/mariadb';
 import { User } from '~entities/user.entity';
 import logger from '~utils/logger.util';
 import { env } from './env.config';
+import { Location } from '~entities/location.entity';
 
 const userEntities = [User];
-const entities = [...userEntities];
+const entities = [...userEntities, Location];
 
 export default defineConfig({
 	driver: MariaDbDriver,
