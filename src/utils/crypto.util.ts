@@ -34,4 +34,12 @@ export class CryptoUtil {
 		)) as Buffer;
 		return hashed === hash.toString('hex');
 	}
+
+	static encodeNumberTo4Number(number: number) {
+		return number * 157 + 1000;
+	}
+
+	static decodeNumberTo4Number(number: number) {
+		return (number - 1000) / 157;
+	}
 }

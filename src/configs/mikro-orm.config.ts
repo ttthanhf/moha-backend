@@ -4,9 +4,10 @@ import { User } from '~entities/user.entity';
 import logger from '~utils/logger.util';
 import { env } from './env.config';
 import { Location } from '~entities/location.entity';
+import { Order } from '~entities/order.entity';
 
 const userEntities = [User];
-const entities = [...userEntities, Location];
+const entities = [...userEntities, Location, Order];
 
 export default defineConfig({
 	driver: MariaDbDriver,

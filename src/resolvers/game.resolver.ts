@@ -15,6 +15,7 @@ import {
 } from 'type-graphql';
 import { pubSub } from '~configs/yoga.config';
 import { LocationType } from '~constants/location.constant';
+import { Location } from '~entities/location.entity';
 import { AuthMiddleware } from '~middlewares/auth.middleware';
 import locationRepository from '~repositories/location.repository';
 import { UserService } from '~services/user.service';
@@ -317,6 +318,10 @@ class Room {
 
 	results: GameResultInput[] = [];
 
+	mutipleChoiceResult: Location[] = [];
+
+	finderResult: Location[] = [];
+
 	@Field(() => [UserRoom])
 	users: UserRoom[] = [];
 	constructor(ownerId: number, ownerName: string, type: LocationType) {
@@ -424,6 +429,7 @@ export class GameResolver {
 			totalUsers?: number;
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			locations?: any;
+			secondGame?: string;
 		},
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		@Arg('roomId', () => ID) roomId: string
@@ -451,6 +457,11 @@ export class GameResolver {
 					finishedCount: payload.finishedCount,
 					totalUsers: payload.totalUsers,
 					locations: payload.locations
+				});
+			case 'chooseSecondGame':
+				return JSON.stringify({
+					type: 'chooseSecondGame',
+					secondGame: payload.secondGame
 				});
 		}
 	}
@@ -511,6 +522,8 @@ export class GameResolver {
 				type: room.type
 			});
 
+			room.mutipleChoiceResult = locations;
+
 			pubSub.publish('roomTopic', {
 				roomId,
 				userId,
@@ -537,5 +550,80 @@ export class GameResolver {
 		}
 
 		return room;
+	}
+
+	@UseMiddleware(AuthMiddleware.LoginRequire)
+	@Mutation(() => Boolean)
+	async chooseSecondGame(
+		@Ctx() ctx: Context,
+		@Arg('secondGame') secondGame: string
+	) {
+		const userId = ctx.res.model.data.user.id;
+		const roomId = joinedUserIds.get(userId);
+
+		if (!roomId) {
+			throw new GraphQLError('Room not found');
+		}
+
+		const room = rooms.get(roomId);
+		if (!room) {
+			throw new GraphQLError('Room not found');
+		}
+
+		pubSub.publish('roomTopic', {
+			type: 'chooseSecondGame',
+			secondGame
+		});
+
+		return true;
+	}
+
+	// @UseMiddleware(AuthMiddleware.LoginRequire)
+	// @Mutation(() => Boolean)
+	// async finishFinder(
+	// 	@Ctx() ctx: Context,
+	// 	@Arg('locationList', () => [Location]) locationList: Location[]
+	// ) {
+	// 	const userId = ctx.res.model.data.user.id;
+	// 	const roomId = joinedUserIds.get(userId);
+
+	// 	if (!roomId) {
+	// 		throw new GraphQLError('Room not found');
+	// 	}
+
+	// 	const room = rooms.get(roomId);
+	// 	if (!room) {
+	// 		throw new GraphQLError('Room not found');
+	// 	}
+
+	// 	room.finderResult = locationList;
+
+	// 	return true;
+	// }
+
+	@UseMiddleware(AuthMiddleware.LoginRequire)
+	@Mutation(() => Location)
+	async finishRandomWheel(@Ctx() ctx: Context) {
+		const userId = ctx.res.model.data.user.id;
+		const roomId = joinedUserIds.get(userId);
+
+		if (!roomId) {
+			throw new GraphQLError('Room not found');
+		}
+
+		const room = rooms.get(roomId);
+		if (!room) {
+			throw new GraphQLError('Room not found');
+		}
+
+		if (room.finderResult.length != 0) {
+			const array = room.finderResult;
+			const randomItem = array[Math.floor(Math.random() * array.length)];
+			return randomItem;
+		}
+
+		const array = room.mutipleChoiceResult;
+		const randomItem = array[Math.floor(Math.random() * array.length)];
+		return randomItem;
 	}
 }

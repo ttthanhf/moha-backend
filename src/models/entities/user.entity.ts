@@ -46,6 +46,14 @@ export class User extends BaseEntity {
 	@Property()
 	isVerified: boolean = false;
 
+	@Field()
+	@Property()
+	isPremium: boolean = false;
+
+	@Field({ nullable: true })
+	@Property({ nullable: true })
+	premiumExpireAt!: Date;
+
 	@BeforeCreate()
 	async encryptPassword() {
 		if (this.password) {
