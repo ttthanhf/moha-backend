@@ -27,4 +27,23 @@ export class OrderService {
 			isSuccess: false
 		});
 	}
+
+	static async countSuccessOrders() {
+		return orderRepository.count({
+			isSuccess: true
+		});
+	}
+
+	static async getSuccessOrdersFromStartDateToEndDate(
+		startDate: Date,
+		endDate: Date = new Date()
+	) {
+		return orderRepository.find({
+			createdAt: {
+				$lte: endDate,
+				$gte: startDate
+			},
+			isSuccess: true
+		});
+	}
 }

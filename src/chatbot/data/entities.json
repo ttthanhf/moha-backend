@@ -1,0 +1,85 @@
+[
+  {
+    "entity": "taste",
+    "data": [
+      {
+        "name": "cay",
+        "locale": "vi",
+        "utterances": [
+          "cay",
+          "nhiều cay",
+          "siêu cay",
+          "cay xé lưỡi",
+          "cay nồng",
+          "cay tê"
+        ]
+      },
+      {
+        "name": "ngọt",
+        "locale": "vi",
+        "utterances": ["ngọt", "ngọt ngào", "rất ngọt", "ngọt lịm", "ngọt quá"]
+      },
+      {
+        "name": "mặn",
+        "locale": "vi",
+        "utterances": ["mặn", "rất mặn", "mặn lạ", "mặn đậm"]
+      },
+      {
+        "name": "chua",
+        "locale": "vi",
+        "utterances": ["chua", "chua chua", "chua ngọt", "chua cay"]
+      }
+    ]
+  },
+  {
+    "entity": "temperature",
+    "data": [
+      {
+        "name": "nóng",
+        "locale": "vi",
+        "utterances": ["nóng", "rất nóng", "nóng hổi", "nóng sốt", "nóng bừng"]
+      },
+      {
+        "name": "lạnh",
+        "locale": "vi",
+        "utterances": ["lạnh", "rất lạnh", "lạnh buốt", "lạnh ngắt", "lạnh giá"]
+      },
+      {
+        "name": "ấm",
+        "locale": "vi",
+        "utterances": ["ấm", "ấm cúng", "ấm áp", "ấm nóng", "ấm vừa"]
+      }
+    ]
+  },
+  {
+    "entity": "preference",
+    "data": [
+      {
+        "name": "thích",
+        "locale": "vi",
+        "utterances": ["thích", "yêu thích", "ưa thích", "đam mê", "hứng thú"]
+      },
+      {
+        "name": "không thích",
+        "locale": "vi",
+        "utterances": [
+          "không thích",
+          "ghét",
+          "không ưa",
+          "không hứng thú",
+          "không yêu thích"
+        ]
+      }
+    ]
+  },
+  {
+    "entity": "pronoun",
+    "data": [
+      {
+        "name": "firstPerson",
+        "locale": "vi",
+        "utterances": ["tao", "tôi", "tui", "ta", "tớ", "mình"]
+      }
+    ]
+  }
+]

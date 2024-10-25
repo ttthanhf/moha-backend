@@ -3,7 +3,8 @@ import { registerEnumType } from 'type-graphql';
 export enum LocationType {
 	EAT = 'eat',
 	DRINK = 'drink',
-	PLAY = 'play'
+	PLAY = 'play',
+	UNKNOWN = 'unknown'
 }
 
 registerEnumType(LocationType, {

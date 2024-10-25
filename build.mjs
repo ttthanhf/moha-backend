@@ -159,6 +159,7 @@ minifyJsonFile('./package.json', path.join(distDir, 'package.json'));
 minifyJsonFile('./package-lock.json', path.join(distDir, 'package-lock.json'));
 
 fs.copyFileSync('./.env', path.join(distDir, '.env'));
+fs.copyFileSync('./model.nlp', path.join(distDir, 'model.nlp'));
 
 await minifyHandle(buildDir);
 

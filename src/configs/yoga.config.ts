@@ -17,6 +17,8 @@ import { GraphQLError, ValidationContext } from 'graphql';
 import { FileScalar, FileScalarType } from '~types/scalars/file.scalar';
 import { GameResolver } from '~resolvers/game.resolver';
 import { OrderResolver } from '~resolvers/order.resolver';
+import { DashboardResolver } from '~resolvers/dashboard.resolver';
+import { ChatBotResolver } from '~resolvers/chatbot.resolver';
 
 function logReject(ctx: ValidationContext | null, error: GraphQLError) {
 	const info = ctx?.getDocument().loc?.source.body.trim().replace(/\s+/g, ' ');
@@ -29,7 +31,14 @@ export const pubSub = createPubSub();
 export async function getYogaConfig(): Promise<YogaServerOptions<any, any>> {
 	return {
 		schema: await buildSchema({
-			resolvers: [UserResolver, AuthResolver, GameResolver, OrderResolver],
+			resolvers: [
+				UserResolver,
+				AuthResolver,
+				GameResolver,
+				OrderResolver,
+				DashboardResolver,
+				ChatBotResolver
+			],
 			globalMiddlewares: [GlobalMiddleware.ErrorInterceptor],
 			scalarsMap: [{ type: FileScalarType, scalar: FileScalar }],
 			pubSub: pubSub

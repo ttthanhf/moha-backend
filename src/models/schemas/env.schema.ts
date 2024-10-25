@@ -31,7 +31,9 @@ export const envTypeSchema = Type.Object({
 
 	JWT_EXPIRE: Type.String(),
 	JWT_ALGORITHM: Type.String(),
-	JWT_KEY: Type.String()
+	JWT_KEY: Type.String(),
+
+	GEMINI_KEY: Type.String()
 });
 
 export type EnvType = Static<typeof envTypeSchema>;

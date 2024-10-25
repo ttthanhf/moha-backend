@@ -5,3 +5,8 @@ build/
 
 #File
 .env
+model.nlp
+test.*js
+
+#Prefix File
+*.txt

@@ -25,6 +25,10 @@
 		// "sourceMap": true,
 		"inlineSourceMap": true,
 
+		//JS
+		"allowJs": true,
+		"checkJs": false,
+
 		// alias
 		"baseUrl": "src",
 		"paths": {

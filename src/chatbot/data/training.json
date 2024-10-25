@@ -1,0 +1,227 @@
+[
+	{
+		"intent": "greeting",
+		"data": [
+			{
+				"locale": "vi",
+				"data": {
+					"utterances": [
+						"xin chào",
+						"chào bạn",
+						"chào buổi sáng",
+						"chào buổi tối",
+						"rất vui được gặp bạn",
+						"chào",
+						"hello",
+						"hi",
+						"hey",
+						"chào anh",
+						"chào chị",
+						"xin chào mọi người",
+						"chào bạn nhé",
+						"chào cả nhà",
+						"chào cậu",
+						"hello there",
+						"greetings",
+						"alo"
+					],
+					"answers": [
+						"Xin chào! Tôi có thể giúp gì cho bạn?",
+						"Chào bạn! Bạn cần hỗ trợ gì không?",
+						"Xin chào, rất vui được trò chuyện với bạn!",
+						"Hello! Có gì tôi có thể giúp bạn hôm nay?",
+						"Chào bạn, hôm nay bạn thế nào?",
+						"Xin chào, bạn muốn hỏi gì?",
+						"Chào! Tôi luôn sẵn sàng giúp đỡ!",
+						"Hi! Có điều gì bạn thắc mắc không?",
+						"Chào bạn! Hãy cho tôi biết bạn cần gì nhé.",
+						"Xin chào! Tôi có thể hỗ trợ bạn việc gì không?",
+						"Chào! Mình có thể làm gì cho bạn hôm nay?",
+						"Hello! Bạn có câu hỏi nào không?",
+						"Chào bạn, mình có thể giúp gì cho bạn?",
+						"Xin chào! Rất vui được giúp bạn.",
+						"Chào bạn, có gì mình giúp bạn không?"
+					]
+				}
+			}
+		]
+	},
+	{
+		"intent": "eat",
+		"data": [
+			{
+				"locale": "vi",
+				"data": {
+					"utterances": [
+						"Hôm nay tôi muốn ăn gì đó",
+						"Tôi đang muốn ăn gì đó",
+						"Mình muốn ăn gì đó hôm nay",
+						"Hôm nay nên ăn gì nhỉ?",
+						"Tôi đang không biết ăn gì hôm nay",
+						"Hôm nay nên ăn gì?",
+						"Mình đang thèm ăn cái gì đó",
+						"Hôm nay ăn gì ngon nhỉ?",
+						"Mình muốn ăn món gì đó",
+						"Tôi đang không biết nên ăn gì hôm nay",
+						"Ăn gì được nhỉ?",
+						"Nên ăn gì hôm nay?",
+						"Tôi muốn thử món gì đó mới",
+						"Hôm nay có gì ngon để ăn không?",
+						"Tôi đói quá, có gì ăn không?",
+						"Đói quá, ăn gì bây giờ?",
+						"Có gì ăn không, tôi đói rồi",
+						"Tôi thèm ăn quá, có gì gợi ý không?",
+						"Còn gì để ăn không nhỉ?",
+						"Đang đói, có món nào ngon không?"
+					],
+					"answers": [
+						"Tôi có thể giúp bạn tìm kiếm một số địa điểm ăn uống thú vị và hấp dẫn, dưới đây là một số gợi ý đáng chú ý mà bạn không nên bỏ qua:",
+						"Trong trường hợp bạn đang tìm kiếm một số ý tưởng mới cho bữa ăn của mình, dưới đây là một số địa điểm ăn uống nổi tiếng và được yêu thích nhất hiện nay:",
+						"Để giúp bạn quyết định dễ dàng hơn, tôi sẽ giới thiệu một số quán ăn và địa điểm ăn uống chất lượng cao, với thực đơn đa dạng và phong phú:",
+						"Dưới đây là một số địa điểm ăn uống được nhiều người yêu thích và đánh giá cao, với không gian ấm cúng và dịch vụ tốt:",
+						"Trong số các lựa chọn đa dạng, dưới đây là một số địa điểm ăn uống độc đáo và mới lạ, với thực đơn sáng tạo và hấp dẫn:",
+						"Để đáp ứng nhu cầu của bạn, tôi sẽ cung cấp một số gợi ý về các địa điểm ăn uống lý tưởng cho bữa ăn của bạn hôm nay, với giá cả hợp lý và chất lượng tốt:",
+						"Trong trường hợp bạn muốn khám phá thêm, dưới đây là một số địa điểm ăn uống mới và hiện đại, với không gian sang trọng và dịch vụ chuyên nghiệp:",
+						"Để giúp bạn có trải nghiệm tốt hơn, tôi sẽ giới thiệu một số địa điểm ăn uống được đánh giá cao bởi người dùng, với thực đơn đa dạng và phong phú:",
+						"Dưới đây là một số địa điểm ăn uống được yêu thích nhất hiện nay, với không gian ấm cúng và dịch vụ tốt, cùng với thực đơn đa dạng và phong phú:",
+						"Trong số các lựa chọn phong phú, dưới đây là một số địa điểm ăn uống độc đáo và mới lạ, với thực đơn sáng tạo và hấp dẫn, cùng với giá cả hợp lý và chất lượng tốt:",
+						"Tôi hy vọng những gợi ý này sẽ giúp bạn tìm được địa điểm ăn uống phù hợp cho bữa ăn của mình hôm nay, với thực đơn đa dạng và phong phú, cùng với không gian ấm cúng và dịch vụ tốt:",
+						"Trong trường hợp bạn cần thêm thông tin, dưới đây là một số địa điểm ăn uống được yêu thích nhất hiện nay, với thực đơn đa dạng và phong phú, cùng với giá cả hợp lý và chất lượng tốt:",
+						"Dưới đây là một số địa điểm ăn uống được đánh giá cao bởi người dùng, với thực đơn đa dạng và phong phú, cùng với không gian ấm cúng và dịch vụ tốt:",
+						"Tôi sẽ giúp bạn tìm kiếm một số địa điểm ăn uống thú vị và hấp dẫn, dưới đây là một số gợi ý mà bạn không nên bỏ qua:",
+						"Để giúp bạn quyết định dễ dàng hơn, tôi sẽ giới thiệu một số quán ăn và địa điểm ăn uống chất lượng cao, với thực đơn đa dạng và phong phú, cùng với giá cả hợp lý và chất lượng tốt:",
+						"Trong số các lựa chọn đa dạng, dưới đây là một số địa điểm ăn uống độc đáo và mới lạ, với thực đơn sáng tạo và hấp dẫn, cùng với không gian ấm cúng và dịch vụ tốt:"
+					]
+				}
+			}
+		]
+	},
+	{
+		"intent": "play",
+		"data": [
+			{
+				"locale": "vi",
+				"data": {
+					"utterances": [
+						"Tôi đang muốn đi chơi đâu đó",
+						"Mình muốn đi đâu đó chơi",
+						"Hôm nay tôi muốn ra ngoài một chút",
+						"Tôi cần đi chơi đâu đó",
+						"Có nơi nào thú vị để đi chơi không?",
+						"Mình đang tìm chỗ đi chơi",
+						"Tôi muốn khám phá một địa điểm mới",
+						"Hôm nay tôi muốn ra ngoài thư giãn",
+						"Có địa điểm nào đẹp để đi chơi không?",
+						"Tôi muốn tìm chỗ để đi chơi cuối tuần",
+						"Có nơi nào thú vị để mình đi không?",
+						"Mình đang muốn đi đâu đó vui vẻ",
+						"Tôi cần tìm một nơi để thư giãn",
+						"Có kế hoạch gì cho việc đi chơi không?",
+						"Hôm nay mình muốn đi dạo một chút"
+					],
+					"answers": [
+						"Tôi có thể giúp bạn tìm kiếm một số địa điểm thú vị để đi chơi, dưới đây là một số gợi ý đáng chú ý mà bạn không nên bỏ qua:",
+						"Trong trường hợp bạn đang tìm kiếm một số ý tưởng mới cho hoạt động vui chơi của mình, dưới đây là một số địa điểm thú vị và hấp dẫn mà bạn có thể thử:",
+						"Để giúp bạn quyết định dễ dàng hơn, tôi sẽ giới thiệu một số địa điểm vui chơi và giải trí chất lượng cao, với không gian ấm cúng và dịch vụ tốt:",
+						"Dưới đây là một số gợi ý cho chuyến đi chơi của bạn, với những địa điểm thú vị và hấp dẫn mà bạn không nên bỏ qua:",
+						"Trong số các lựa chọn đa dạng, dưới đây là một số địa điểm thư giãn và vui chơi độc đáo và mới lạ, với hoạt động thú vị và hấp dẫn:",
+						"Để đáp ứng nhu cầu của bạn, tôi sẽ cung cấp một số gợi ý về các địa điểm vui chơi và giải trí lý tưởng cho bạn, với giá cả hợp lý và chất lượng tốt:",
+						"Trong trường hợp bạn muốn khám phá thêm, dưới đây là một số địa điểm thú vị và hấp dẫn mà bạn có thể ghé thăm, với không gian sang trọng và dịch vụ chuyên nghiệp:",
+						"Để giúp bạn có trải nghiệm tốt hơn, tôi sẽ giới thiệu một số địa điểm vui chơi và giải trí được đánh giá cao bởi người dùng, với hoạt động thú vị và hấp dẫn:",
+						"Dưới đây là một số địa điểm thú vị và hấp dẫn mà bạn có thể thử, với không gian ấm cúng và dịch vụ tốt, cùng với giá cả hợp lý và chất lượng tốt:",
+						"Trong số các lựa chọn đa dạng, dưới đây là một số địa điểm thư giãn và vui chơi độc đáo và mới lạ, với hoạt động thú vị và hấp dẫn, cùng với không gian ấm cúng và dịch vụ tốt:",
+						"Tôi hy vọng những gợi ý này sẽ giúp bạn tìm được địa điểm vui chơi và giải trí phù hợp cho mình, với hoạt động thú vị và hấp dẫn, cùng với không gian ấm cúng và dịch vụ tốt:",
+						"Trong trường hợp bạn cần thêm thông tin, dưới đây là một số địa điểm vui chơi và giải trí được yêu thích nhất hiện nay, với hoạt động thú vị và hấp dẫn, cùng với giá cả hợp lý và chất lượng tốt:",
+						"Dưới đây là một số địa điểm vui chơi và giải trí được đánh giá cao bởi người dùng, với hoạt động thú vị và hấp dẫn, cùng với không gian ấm cúng và dịch vụ tốt:",
+						"Tôi sẽ giúp bạn tìm kiếm một số địa điểm thú vị và hấp dẫn để đi chơi, dưới đây là một số gợi ý mà bạn không nên bỏ qua:",
+						"Để giúp bạn quyết định dễ dàng hơn, tôi sẽ giới thiệu một số địa điểm vui chơi và giải trí chất lượng cao, với hoạt động thú vị và hấp dẫn, cùng với giá cả hợp lý và chất lượng tốt:",
+						"Trong số các lựa chọn đa dạng, dưới đây là một số địa điểm thư giãn và vui chơi độc đáo và mới lạ, với hoạt động thú vị và hấp dẫn, cùng với không gian ấm cúng và dịch vụ tốt:"
+					]
+				}
+			}
+		]
+	},
+	{
+		"intent": "drink",
+		"data": [
+			{
+				"locale": "vi",
+				"data": {
+					"utterances": [
+						"Tôi khát nước",
+						"Mình đang rất khát",
+						"Tôi muốn uống nước",
+						"Hôm nay tôi cảm thấy khát",
+						"Có nước nào không?",
+						"Tôi đang cần một ly nước",
+						"Tôi thèm nước quá",
+						"Mình cần uống nước ngay",
+						"Tôi đang rất cần nước",
+						"Hãy cho tôi một chút nước",
+						"Có gì uống không?",
+						"Tôi cần uống gì đó",
+						"Tôi muốn tìm nước uống",
+						"Tôi khát quá, có ai giúp không?",
+						"Mình muốn uống một ly nước lạnh",
+						"Tôi muốn uống gì đó",
+						"Có món đồ uống nào không?",
+						"Tôi đang tìm một thức uống nào đó",
+						"Có gì để uống không?"
+					],
+					"answers": [
+						"Tôi có thể giúp bạn tìm kiếm một số địa điểm thú vị để tìm đồ uống, dưới đây là một số gợi ý đáng chú ý mà bạn không nên bỏ qua:",
+						"Trong trường hợp bạn đang tìm kiếm một số ý tưởng mới cho việc tìm đồ uống, dưới đây là một số quán nước thú vị và hấp dẫn mà bạn có thể ghé thăm:",
+						"Để giúp bạn quyết định dễ dàng hơn, tôi sẽ giới thiệu một số quán nước và địa điểm bán đồ uống chất lượng cao, với không gian ấm cúng và dịch vụ tốt:",
+						"Dưới đây là một số gợi ý về nơi bạn có thể mua nước uống, với những địa điểm thú vị và hấp dẫn mà bạn không nên bỏ qua:",
+						"Trong số các lựa chọn đa dạng, dưới đây là một số quán giải khát độc đáo và mới lạ, với đồ uống tươi mát và hấp dẫn:",
+						"Để đáp ứng nhu cầu của bạn, tôi sẽ cung cấp một số gợi ý về các địa điểm bán đồ uống lý tưởng cho bạn, với giá cả hợp lý và chất lượng tốt:",
+						"Trong trường hợp bạn muốn khám phá thêm, dưới đây là một số địa điểm bán đồ uống thú vị và hấp dẫn mà bạn có thể ghé thăm, với không gian sang trọng và dịch vụ chuyên nghiệp:",
+						"Để giúp bạn có trải nghiệm tốt hơn, tôi sẽ giới thiệu một số địa điểm bán đồ uống được đánh giá cao bởi người dùng, với đồ uống ngon và hấp dẫn:",
+						"Dưới đây là một số địa điểm bán đồ uống thú vị và hấp dẫn mà bạn có thể tham khảo, với không gian ấm cúng và dịch vụ tốt, cùng với giá cả hợp lý và chất lượng tốt:",
+						"Trong số các lựa chọn đa dạng, dưới đây là một số quán giải khát độc đáo và mới lạ, với đồ uống tươi mát và hấp dẫn, cùng với không gian ấm cúng và dịch vụ tốt:",
+						"Tôi hy vọng những gợi ý này sẽ giúp bạn tìm được địa điểm bán đồ uống phù hợp cho mình, với đồ uống ngon và hấp dẫn, cùng với không gian ấm cúng và dịch vụ tốt:",
+						"Trong trường hợp bạn cần thêm thông tin, dưới đây là một số địa điểm bán đồ uống được yêu thích nhất hiện nay, với đồ uống ngon và hấp dẫn, cùng với giá cả hợp lý và chất lượng tốt:",
+						"Dưới đây là một số địa điểm bán đồ uống được đánh giá cao bởi người dùng, với đồ uống ngon và hấp dẫn, cùng với không gian ấm cúng và dịch vụ tốt:",
+						"Tôi sẽ giúp bạn tìm kiếm một số địa điểm bán đồ uống thú vị và hấp dẫn, dưới đây là một số gợi ý mà bạn không nên bỏ qua:",
+						"Để giúp bạn quyết định dễ dàng hơn, tôi sẽ giới thiệu một số địa điểm bán đồ uống chất lượng cao, với đồ uống ngon và hấp dẫn, cùng với giá cả hợp lý và chất lượng tốt:",
+						"Trong số các lựa chọn đa dạng, dưới đây là một số quán giải khát độc đáo và mới lạ, với đồ uống tươi mát và hấp dẫn, cùng với không gian ấm cúng và dịch vụ tốt:"
+					]
+				}
+			}
+		]
+	},
+	{
+		"intent": "whatismyname",
+		"data": [
+			{
+				"locale": "vi",
+				"data": {
+					"utterances": [
+						"Tên tôi là gì?",
+						"Tên của tôi là gì?",
+						"Bạn biết tên tôi không?",
+						"Tôi tên gì?",
+						"Tên của mình là gì?",
+						"Bạn có biết tôi tên gì không?",
+						"Ai biết tên của tôi?",
+						"Tên tôi là gì nhỉ?",
+						"Bạn nhớ tên tôi không?",
+						"Gọi tôi là gì nhỉ?"
+					],
+					"answers": [
+						"Tên của bạn là:",
+						"Bạn tên là:",
+						"Tên của bạn chính là:",
+						"Tôi nhớ bạn tên là:",
+						"Bạn được gọi là:",
+						"Mọi người gọi bạn là:",
+						"Tôi nghĩ tên của bạn là:",
+						"Bạn có tên là:",
+						"Theo tôi biết, bạn tên là:",
+						"Tên mà bạn hay dùng là:"
+					]
+				}
+			}
+		]
+	}
+]

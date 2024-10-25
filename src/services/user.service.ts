@@ -4,6 +4,8 @@ import { env } from '~configs/env.config';
 import { DateTimeUtil } from '~utils/datetime.util';
 import { JWTUtil } from '~utils/jwt.util';
 import { UserArg } from '~types/args/user.arg';
+import { PageInfoArgs } from '~types/args/pagination.arg';
+import { PaginationUtil } from '~utils/pagination.util';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export class UserService {
@@ -48,6 +50,35 @@ export class UserService {
 			},
 			{
 				fields
+			}
+		);
+	}
+
+	static async countAllUsers() {
+		return userRepository.count();
+	}
+
+	static async countAllTodayNewUsers() {
+		const today = new Date();
+		today.setHours(0, 0, 0, 0);
+
+		return userRepository.count({
+			createdAt: {
+				$gte: today
+			}
+		});
+	}
+
+	static async getUsersWithPagination(pageInfoArgs: PageInfoArgs) {
+		const pageResult = PaginationUtil.avoidTrashInput(pageInfoArgs);
+		return userRepository.findAndCount(
+			{},
+			{
+				...pageResult,
+				orderBy: {
+					id: 'DESC'
+				},
+				populate: ['orders']
 			}
 		);
 	}
