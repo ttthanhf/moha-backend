@@ -17,8 +17,8 @@ export class DashboardResolver {
 		const overViewResponse = new OverViewResponse();
 
 		overViewResponse.totalCustomer = await UserService.countAllUsers();
-		overViewResponse.totalNewCustomer =
-			await UserService.countAllTodayNewUsers();
+		overViewResponse.totalPremiumCustomer =
+			await UserService.countAllTodayPremiumUsers();
 
 		const totalOrder = await OrderService.countSuccessOrders();
 		overViewResponse.totalTransaction = totalOrder;

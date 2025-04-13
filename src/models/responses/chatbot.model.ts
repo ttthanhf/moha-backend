@@ -11,4 +11,7 @@ export class ChatbotResponse {
 
 	@Field()
 	isShowLocation!: boolean;
+
+	@Field()
+	isError!: boolean;
 }

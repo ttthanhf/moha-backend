@@ -12,7 +12,7 @@ export class OverViewResponse {
 	totalCustomer!: number;
 
 	@Field(() => Int)
-	totalNewCustomer!: number;
+	totalPremiumCustomer!: number;
 }
 
 @ObjectType()

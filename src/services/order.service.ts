@@ -28,6 +28,15 @@ export class OrderService {
 		});
 	}
 
+	static async findSuccessOrder() {
+		return orderRepository.find(
+			{
+				isSuccess: true
+			},
+			{ populate: ['user'] }
+		);
+	}
+
 	static async countSuccessOrders() {
 		return orderRepository.count({
 			isSuccess: true

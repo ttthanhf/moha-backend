@@ -58,14 +58,9 @@ export class UserService {
 		return userRepository.count();
 	}
 
-	static async countAllTodayNewUsers() {
-		const today = new Date();
-		today.setHours(0, 0, 0, 0);
-
+	static async countAllTodayPremiumUsers() {
 		return userRepository.count({
-			createdAt: {
-				$gte: today
-			}
+			isPremium: true
 		});
 	}
 

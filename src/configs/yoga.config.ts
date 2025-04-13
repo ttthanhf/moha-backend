@@ -76,5 +76,6 @@ export async function getYogaConfig(): Promise<YogaServerOptions<any, any>> {
 			`,
 			subscriptionsProtocol: 'WS'
 		}
+		// graphiql: false
 	};
 }

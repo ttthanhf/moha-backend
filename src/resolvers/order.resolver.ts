@@ -101,11 +101,18 @@ export class OrderResolver {
 				await UserService.updateUser(user);
 
 				order.isSuccess = true;
+				order.paymentAt = new Date();
 				await OrderService.updateOrder(order);
 
 				return true;
 			}
 			return false;
 		}
+	}
+
+	@Query(() => [Order])
+	async listOrder() {
+		const orders = await OrderService.findSuccessOrder();
+		return orders;
 	}
 }
